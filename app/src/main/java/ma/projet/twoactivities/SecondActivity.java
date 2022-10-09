@@ -16,7 +16,7 @@ private TextView msg;
         Intent intent=getIntent();
         String message = intent.getStringExtra("message");
 
-        msg.setText(message);
+        msg.setText(message);//afficher le msg
 
     }
 }
