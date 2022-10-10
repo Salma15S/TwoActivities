@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     private Button send;
     private EditText txt;
+    private TextView text,msg1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         send = findViewById(R.id.button_main);
         txt=findViewById(R.id.editText_main);
+        text=findViewById(R.id.text);
+        msg1=findViewById(R.id.msg1);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,6 +34,16 @@ intent.putExtra("message",txt.getText().toString());
             }
 
         });
+
+        Intent intent=getIntent();
+        String message = intent.getStringExtra("reply");
+        String message1 = intent.getStringExtra("msg1");
+
+       text.setText(message);//afficher le msg
+msg1.setText(message1);
+
+
+
     }
 
 
